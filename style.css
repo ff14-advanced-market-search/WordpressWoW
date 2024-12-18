@@ -1,0 +1,235 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+.custom-api-block-main {
+    width: 100%;
+    max-width: 900px !important;
+}
+.custom-api-block {
+    width: 100%;
+     font-family: Arial, sans-serif; 
+     position: relative; 
+     max-width: 900px !important;
+     background-color: #101010; 
+     border-radius: 10px; 
+     padding: 14px 14px; 
+}
+/* Header Row Styling */
+.api-title {
+    flex: 1;
+    text-align: center;
+}
+
+/* Data Row Styling */
+.api-flex-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 15px;
+    margin-bottom: 15px;
+}
+
+.api-item-left, .api-item-right {
+    flex: 1;
+    position: relative;
+}
+/* Tooltip Styling */
+.tooltip {
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+}
+/* No Data Styling */
+.no-data {
+    text-align: center !important;
+    color: #fff;
+    font-weight: bold;
+}
+.custom-api-block a {
+/*    color: #FFB100 !important;*/
+    text-align: left;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 10px;
+    line-height: 22px;
+    text-decoration: inherit;
+    font-family: "Rubik", sans-serif;
+}
+.api-flex-container.header {
+    padding: 0px 15px 15px;
+    border-bottom: 1px solid #cccccc54;
+}
+.api-item-left {
+    flex: 2;
+}
+.api-item-right {
+    flex: 4;
+    display: flex;
+    justify-content: space-between;
+/*    align-items: center;*/
+}
+.api-item-right img {
+    max-width: 22px;
+    margin: -2px 10px;
+    height: 22px;
+}
+.api-item-right-inner {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding-right: 12px;
+}
+.api-flex-container.header p {
+    font-family: "Rubik", sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #FFB100 !important;
+    text-align: left;
+    margin:0px !important;
+}
+.first-title {
+    flex: 2;
+}
+.second-title {
+    flex: 4;
+}
+.api-item-right-inner p {
+    font-size: 22px;
+}
+.no-data {
+    text-align: center !important;
+}
+
+
+.tooltip[data-tooltip] {
+    position: relative;
+    cursor: pointer; /* Indicate that it is interactive */
+}
+
+.tooltip[data-tooltip]::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: 100%; /* Position the tooltip below the element */
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: pre-line; /* Ensure line breaks are respected */
+    background:#33394e;
+    color: #fff;
+    font-size: 12px;
+    padding: 8px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    visibility: hidden; /* Initially hide the tooltip */
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 1000; /* Ensure it appears above other content */
+    pointer-events: none; /* Tooltip shouldn't block clicks */
+    width: max-content;
+    font-family: "Rubik", sans-serif;
+/*    max-width: 350px; /* Optional: Limit tooltip width */*/
+}
+
+.tooltip[data-tooltip]:hover::after {
+    visibility: visible;
+    opacity: 1;
+}
+.custom-api-block a:focus {
+    outline: inherit !important;
+}
+.api-item-right-inner a {
+    cursor: inherit;
+}
+.custom-api-block-main .duck-card {
+    display: flex;
+    text-decoration: inherit;
+    margin-bottom: 20px;
+    align-items: center;
+}
+.custom-api-block-main .duck-card img {
+    height: auto;
+}
+.custom-api-block-main .duck-card {
+    display: flex;
+    text-decoration: inherit;
+    margin-bottom: 20px;
+}
+.custom-api-block-main .duck-card:focus {
+    outline: inherit;
+}
+.custom-api-block-main .duck-card p {
+    padding: 1px 20px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+}
+.api-item-right-inner a {
+    color: #FFB100 !important;
+}
+
+
+
+
+/* Custom styles for different rarities */
+.poor-item {
+    color: #9d9d9d; /* Grey */
+    text-decoration: line-through;
+}
+
+.common-item {
+    color: #ffffff; /* White */
+}
+
+.uncommon-item {
+    color: #1eff00; /* Green */
+    font-weight: bold;
+}
+
+.rare-item {
+    color: #0070dd; /* Blue */
+    font-style: italic;
+}
+
+.epic-item {
+    color: #a335ee; /* Purple */
+    text-shadow: 1px 1px 5px #a335ee;
+}
+
+.legendary-item {
+    color: #ff8000; /* Orange */
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/*responsive*/
+@media screen and (max-width: 768px) {
+    .api-item-right-inner p {
+        font-size: 17px;
+    }
+    .api-flex-container.header p {
+        font-size: 22px;
+    }
+    .custom-api-block {
+        max-width: 95% !important;
+    }
+}
+@media screen and (max-width: 767px) {
+    .api-item-right-inner p {
+        font-size: 17px;
+    }
+    .api-flex-container.header p {
+        font-size: 22px;
+    }
+    .custom-api-block {
+        max-width: 95% !important;
+    }
+    .api-item-right-inner p {
+        font-size: 18px;
+    }
+    .api-flex-container {
+        display: block;
+    }
+    .second-title {
+        display: none;
+    }
+    .api-item-right-inner {
+        padding-right: 0;
+    }
+}
