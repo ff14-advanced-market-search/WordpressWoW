@@ -10,22 +10,6 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly
 }
 
-function custom_api_block_add_tooltip_script() {
-    // Load the Wowhead tooltip script on all pages
-    echo '<script>
-        var whTooltips = {
-            colorLinks: true, // Enable color links
-            iconizeLinks: true, // Optional: Show icons
-            renameLinks: true, // Rename with correct item names
-            ignoreLinks: "no-wowhead" // Ignore these links
-        };
-    </script>';
-    echo '<script src="https://wow.zamimg.com/js/tooltips.js"></script>';
-}
-add_action('wp_footer', 'custom_api_block_add_tooltip_script');
-
-
-
 
 // Enqueue block assets
 function custom_api_block_register_block() {
@@ -121,11 +105,13 @@ function custom_api_block_render( $attributes ) {
     }
 
     $response_html = '<div class="custom-api-block-main">';
-    $response_html .= '<a href="https://saddlebagexchange.com/" class="duck-card">';
-    $response_html .= '<img src="' . plugin_dir_url(__FILE__) . 'img/duck.png" alt="Duck" />';
-    $response_html .= '<p>Powered by Saddlebag Exchange</p>';
-    $response_html .= '<img src="' . plugin_dir_url(__FILE__) . 'img/duck.png" alt="Duck" />';
-    $response_html .= '</a>';
+
+    // $response_html .= '<a href="https://saddlebagexchange.com/" class="duck-card">';
+    // $response_html .= '<img src="' . plugin_dir_url(__FILE__) . 'img/duck.png" alt="Duck" />';
+    // $response_html .= '<p>Powered by Saddlebag Exchange</p>';
+    // $response_html .= '<img src="' . plugin_dir_url(__FILE__) . 'img/duck.png" alt="Duck" />';
+    // $response_html .= '</a>';
+
     $response_html .= '<div class="custom-api-block">';  
 
     if (!empty($data['data'])) {
@@ -147,7 +133,7 @@ function custom_api_block_render( $attributes ) {
                 
                 // Left side: Item Name with tooltip
                 $response_html .= '<div class="api-item-left">';  // Dynamically add q1, q2, q3 based on loop index
-                $response_html .= '<a href="https://www.wowhead.com/item='. esc_attr($item['itemID']) .'" class="tooltip ' . 'q' . ($index % 100 + 1) . '" data-wowhead="item=' . esc_attr($item['itemID']) . '">'
+                $response_html .= '<a href="https://www.wowhead.com/item='. esc_attr($item['itemID']) .'" class="tooltip ' . 'tool' . ($index % 100 + 1) . '" data-wowhead="item=' . esc_attr($item['itemID']) . '">'
                         . esc_html($item['itemName']) 
                         . '</a>';
                 $response_html .= '</div>';
@@ -155,11 +141,11 @@ function custom_api_block_render( $attributes ) {
                 // Right side: Prices with tooltip
                 $response_html .= '<div class="api-item-right">';
                 $response_html .= '<div class="api-item-right-inner">';
-                $response_html .= '<a href="javascript:void(0)" class="tooltip" data-tooltip="' . esc_attr($tooltipContent) . '">NA Avg Price: ' . esc_html($item['na_average_price']) . '</a>';
+                $response_html .= '<a href="javascript:void(0)" class="tooltip" data-tooltip="' . esc_attr($tooltipContent) . '">NA Avg: <span>' . esc_html($item['na_average_price']) . '</span></a>';
                 $response_html .= '<img src="' . plugin_dir_url(__FILE__) . 'img/cion.png" alt="Coin Icon" />';
                 $response_html .= '</div>';
                 $response_html .= '<div class="api-item-right-inner">';
-                $response_html .= '<a href="javascript:void(0)" class="tooltip" data-tooltip="' . esc_attr($tooltipContent) . '">EU Avg Price: ' . esc_html($item['eu_average_price']) . '</a>';
+                $response_html .= '<a href="javascript:void(0)" class="tooltip" data-tooltip="' . esc_attr($tooltipContent) . '">EU Avg: <span>' . esc_html($item['eu_average_price']) . '</span></a>';
                 $response_html .= '<img src="' . plugin_dir_url(__FILE__) . 'img/cion.png" alt="Coin Icon" />';
                 $response_html .= '</div>';
                 $response_html .= '</div>';

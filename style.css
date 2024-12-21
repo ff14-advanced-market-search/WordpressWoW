@@ -2,16 +2,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 .custom-api-block-main {
     width: 100%;
-    max-width: 900px !important;
+    max-width: 800px !important;
 }
 .custom-api-block {
     width: 100%;
      font-family: Arial, sans-serif; 
      position: relative; 
-     max-width: 900px !important;
+     max-width: 800px !important;
      background-color: #101010; 
      border-radius: 10px; 
-     padding: 14px 14px; 
+     padding: 14px 0px; 
 }
 /* Header Row Styling */
 .api-title {
@@ -23,8 +23,9 @@
 .api-flex-container {
     display: flex;
     justify-content: space-between;
-    padding: 0px 15px;
+    padding: 0px 0px 15px 22px;
     margin-bottom: 15px;
+    border-bottom: 1px solid #cccccc54;
 }
 
 .api-item-left, .api-item-right {
@@ -47,18 +48,18 @@
 /*    color: #FFB100 !important;*/
     text-align: left;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 18px;
     border-radius: 10px;
     line-height: 22px;
     text-decoration: inherit;
     font-family: "Rubik", sans-serif;
 }
 .api-flex-container.header {
-    padding: 0px 15px 15px;
+    padding: 0px 25px 15px;
     border-bottom: 1px solid #cccccc54;
 }
 .api-item-left {
-    flex: 2;
+    flex: 4;
 }
 .api-item-right {
     flex: 4;
@@ -67,19 +68,20 @@
 /*    align-items: center;*/
 }
 .api-item-right img {
-    max-width: 22px;
-    margin: -2px 10px;
-    height: 22px;
+    max-width: 20px;
+    margin: -2px 0px;
+    height: 20px;
 }
 .api-item-right-inner {
     display: flex;
     align-items: center;
     width: 100%;
     padding-right: 12px;
+/*    justify-content: center;*/
 }
 .api-flex-container.header p {
     font-family: "Rubik", sans-serif;
-    font-size: 28px;
+    font-size: 24px;
     font-weight: 700;
     color: #FFB100 !important;
     text-align: left;
@@ -89,7 +91,8 @@
     flex: 2;
 }
 .second-title {
-    flex: 4;
+    flex: 2;
+    padding-left: 24px;
 }
 .api-item-right-inner p {
     font-size: 22px;
@@ -97,8 +100,11 @@
 .no-data {
     text-align: center !important;
 }
-
-
+.api-flex-container:last-child {
+    border: inherit;
+    margin-bottom: 0;
+    padding-bottom: 10px;
+}
 .tooltip[data-tooltip] {
     position: relative;
     cursor: pointer; /* Indicate that it is interactive */
@@ -145,6 +151,7 @@
 }
 .custom-api-block-main .duck-card img {
     height: auto;
+    width: 35px;
 }
 .custom-api-block-main .duck-card {
     display: flex;
@@ -197,7 +204,12 @@
     text-transform: uppercase;
     font-weight: bold;
 }
-
+.api-item-right-inner a span {
+    color: #fff;
+}
+.api-item-left {
+    margin-bottom: 5px;
+}
 /*responsive*/
 @media screen and (max-width: 768px) {
     .api-item-right-inner p {
