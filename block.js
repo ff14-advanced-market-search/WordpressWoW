@@ -22,7 +22,7 @@ const sanitizeItemIds = (value) => {
 
 // Register the block
 registerBlockType('custom/api-block', {
-    title: 'Custom API Block Gold Capped',
+    title: 'Custom API Block Saddlebag Exchange',
     icon: 'admin-network',
     category: 'widgets',
     attributes: {
@@ -93,7 +93,7 @@ registerBlockType('custom/api-block', {
                     },
                 })
             ),
-            createElement('div', null, 'Custom API Block Gold Capped')
+            createElement('div', null, 'Custom API Block Saddlebag Exchange')
         );
     },
     save: function() {
