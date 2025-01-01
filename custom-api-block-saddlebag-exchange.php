@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Custom API Block Gold Capped
+Plugin Name: Custom API Block Saddlebag Exchange
 Description: This plugin can use to get API 
 Version: 1.0
 Author: Mujahid 
