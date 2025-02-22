@@ -106,11 +106,11 @@ function custom_api_block_render( $attributes ) {
 
     $response_html = '<div class="custom-api-block-main">';
 
-    // $response_html .= '<a href="https://saddlebagexchange.com/" class="duck-card">';
-    // $response_html .= '<img src="' . plugin_dir_url(__FILE__) . 'img/duck.png" alt="Duck" />';
-    // $response_html .= '<p>Powered by Saddlebag Exchange</p>';
-    // $response_html .= '<img src="' . plugin_dir_url(__FILE__) . 'img/duck.png" alt="Duck" />';
-    // $response_html .= '</a>';
+    $response_html .= '<a href="https://saddlebagexchange.com/" class="duck-card">';
+    $response_html .= '<img src="' . plugin_dir_url(__FILE__) . 'img/duck.png" alt="Duck" />';
+    $response_html .= '<p>Powered by Saddlebag Exchange</p>';
+    $response_html .= '<img src="' . plugin_dir_url(__FILE__) . 'img/duck.png" alt="Duck" />';
+    $response_html .= '</a>';
 
     $response_html .= '<div class="custom-api-block">';  
 
