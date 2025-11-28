@@ -77,7 +77,7 @@ function custom_api_block_register_block() {
 add_action( 'init', 'custom_api_block_register_block' );
 
 function custom_api_block_render( $attributes ) {
-    $api_endpoint = 'http://api.saddlebagexchange.com/api/wow/tsmstats';
+    $api_endpoint = 'https://api.saddlebagexchange.com/api/wow/tsmstats';
     
     // Prepare the data to send via POST
     $cleaned_string_array = trim($attributes['item_ids'], '[]"');
