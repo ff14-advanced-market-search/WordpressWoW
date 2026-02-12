@@ -10,6 +10,11 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly
 }
 
+define(
+    'WOW_DISCORD_CONSENT',
+    'I have gone to discord and asked the devs about this api and i know it only updates once per hour and will not spam the api like an idiot and there is no point in making more than one request per hour and i will not make request for one item at a time i know many apis support calling multiple items at once'
+);
+
 function custom_api_block_add_tooltip_script() {
     // Load the Wowhead tooltip script on all pages
     echo '<script>
@@ -85,6 +90,7 @@ function custom_api_block_render( $attributes ) {
     $cleaned_string_id = str_replace(' ', '', $item_ids);
 
     $data = array(
+        'discord_consent' => WOW_DISCORD_CONSENT,
         'item_ids' => $cleaned_string_id,
         'pets' => $attributes['pets'],
         'game_edition' => $attributes['game_edition']
